@@ -4,8 +4,8 @@ import Link from "next/link";
 import profilePic from "../../public/IMG_5814-sq.JPG";
 function Hero() {
   return (
-    <div className="border-2 border-lines-color rounded">
-      <div className="h-[80vh] flex flex-col justify-center max-w-2xl mx-auto items-center gap-5">
+    <div className="border-2 border-lines-color rounded mt-10">
+      <div className="flex flex-col justify-center py-14 max-w-2xl mx-auto items-center gap-5">
         <Image
           src={profilePic}
           alt="profile pic"

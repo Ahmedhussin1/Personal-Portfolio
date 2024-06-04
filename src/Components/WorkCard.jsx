@@ -17,9 +17,9 @@ function WorkCard({icon,projectImg,title, description,skills,projectLink }) {
           <p className="text-[#777b84]">{description}</p>
           <div className="flex gap-2 items-center">
             <p className='hover:underline'>
-              <Link href={{projectLink}}>
+              <a href={projectLink}>
                 Check The Project On Github Now!
-              </Link>
+              </a>
             </p>
             <FaLink />
           </div>

@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={GeistSans.className}>
       <body className="max-w-[1450px] mx-auto">
-        <div className="bg-background-color rounded-lg mt-5">
+        <div className="bg-background-color rounded-lg my-5">
           <Navbar />
           {children}
         </div>
