@@ -7,9 +7,7 @@ import reactIcon from "../../public/images.png";
 import projectImg from "../../public/original-accb2ef29d68a2a29119c5e3ff116f33.png";
 import { GoCodeSquare } from "react-icons/go";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { FaRegPaperPlane } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
-
+import singleWorkCardData from "../data/singleWorkCardData";
 
 import { useState } from "react";
 import GetInTouch from "@/Components/GetInTouch";
@@ -40,28 +38,25 @@ export default function Home() {
         <div className="col-span-1" />
       </div>
       {/* work section cards */}
-      <WorkCard
+      {singleWorkCardData.map((work) => (
+        <WorkCard
+          key={work.id}
+          id={work.id}
+          title={work.title}
+          description={work.description}
+          icon={work.icon}
+          projectImg={work.projectImg}
+          skills={work.skills}
+          projectLink={work.projectLink}
+        />
+      ))}
+      {/* <WorkCard
         title={"React Project"}
         description={"This is the descriptoin of this project done by me"}
         icon={reactIcon}
         projectImg={projectImg}
         skills={["react", "js", "html"]}
-        projectLink={"https://github.com/Ahmedhussin1/Personal-Portfolio"}
-      />
-      <WorkCard
-        title={"React Project"}
-        description={"This is the descriptoin of this project done by me"}
-        icon={reactIcon}
-        projectImg={projectImg}
-        skills={["react", "js", "html"]}
-      />
-      <WorkCard
-        title={"React Project"}
-        description={"This is the descriptoin of this project done by me"}
-        icon={reactIcon}
-        projectImg={projectImg}
-        skills={["react", "js", "html"]}
-      />
+      /> */}
       {/* about section */}
       <div className="flex flex-col justify-center items-center gap-5 border-2 border-lines-color rounded border-t-0">
         <div className="grid grid-cols-3">
@@ -148,7 +143,7 @@ export default function Home() {
         </div>
       </div>
       {/* get in touch section */}
-      <GetInTouch/>
+      <GetInTouch />
     </div>
   );
 }

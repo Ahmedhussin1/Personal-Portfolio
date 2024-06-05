@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FaLink } from "react-icons/fa";
 
 
-function WorkCard({icon,projectImg,title, description,skills,projectLink }) {
+function WorkCard({id,icon,projectImg,title, description,skills,projectLink }) {
   return (
     <div className="grid grid-cols-3 gap-1 mt-1">
       {/* right column */}
@@ -23,7 +23,7 @@ function WorkCard({icon,projectImg,title, description,skills,projectLink }) {
             </p>
             <FaLink />
           </div>
-          <div className="flex gap-2 mt-2 ">
+          <div className="flex flex-wrap justify-start items-center gap-2 mt-2 ">
             {skills.map((skill, index) => (
               <span
                 className="bg-[#212225] px-3 font-mono text-[#edeef0]"
@@ -37,13 +37,15 @@ function WorkCard({icon,projectImg,title, description,skills,projectLink }) {
       </div>
       {/* image column */}
       <div className="col-span-2 border-2 border-lines-color rounded flex justify-center  p-5">
-        <Image
-          src={projectImg}
-          alt="project image"
-          width={500}
-          height={300}
-          className="transition-transform duration-300 hover:scale-110"
-        />
+        <Link href={`/work/${id}`}>
+            <Image
+              src={projectImg}
+              alt="project image"
+              width={500}
+              height={300}
+              className=" cursor-pointer transition-transform duration-300 hover:scale-110"
+            />
+        </Link>
       </div>
     </div>
   );
