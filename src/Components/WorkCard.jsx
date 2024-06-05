@@ -2,6 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaLink } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import Button from './Button';
+
 
 
 function WorkCard({id,icon,projectImg,title, description,skills,projectLink }) {
@@ -15,14 +18,9 @@ function WorkCard({id,icon,projectImg,title, description,skills,projectLink }) {
             <h1 className="text-2xl font-semibold uppercase">{title}</h1>
           </div>
           <p className="text-[#777b84]">{description}</p>
-          <div className="flex gap-2 items-center">
-            <p className='hover:underline'>
-              <a href={projectLink}>
-                Check The Project On Github Now!
-              </a>
-            </p>
-            <FaLink />
-          </div>
+          <Button title={'Github Ripo'} link={projectLink}>
+            <FaGithub/>
+          </Button>
           <div className="flex flex-wrap justify-start items-center gap-2 mt-2 ">
             {skills.map((skill, index) => (
               <span
