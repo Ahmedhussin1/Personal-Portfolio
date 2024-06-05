@@ -1,9 +1,9 @@
 import WorkCard from "@/Components/WorkCard";
 import React from "react";
 import { GoCodeSquare } from "react-icons/go";
-import reactIcon from "../../../public/images.png";
-import projectImg from "../../../public/original-accb2ef29d68a2a29119c5e3ff116f33.png";
 import GetInTouch from "@/Components/GetInTouch";
+import singleWorkCardData from "@/data/singleWorkCardData";
+
 
 function WorkPage() {
   return (
@@ -39,7 +39,7 @@ function WorkPage() {
         <div className="col-span-1" />
       </div>
       {/* work section cards */}
-      <WorkCard
+      {/* <WorkCard
         id={1}
         title={"React Project"}
         description={"This is the descriptoin of this project done by me"}
@@ -47,23 +47,19 @@ function WorkPage() {
         projectImg={projectImg}
         skills={["react", "js", "html"]}
         projectLink={"https://github.com/Ahmedhussin1/Personal-Portfolio"}
-      />
-      <WorkCard
-      id={2}
-        title={"React Project"}
-        description={"This is the descriptoin of this project done by me"}
-        icon={reactIcon}
-        projectImg={projectImg}
-        skills={["react", "js", "html"]}
-      />
-      <WorkCard
-      id={3}
-        title={"React Project"}
-        description={"This is the descriptoin of this project done by me"}
-        icon={reactIcon}
-        projectImg={projectImg}
-        skills={["react", "js", "html"]}
-      />
+      /> */}
+      {singleWorkCardData.map((work) => (
+        <WorkCard
+          key={work.id}
+          id={work.id}
+          title={work.title}
+          description={work.description}
+          icon={work.icon}
+          projectImg={work.projectImg}
+          skills={work.skills}
+          projectLink={work.projectLink}
+        />
+      ))}
       <GetInTouch />
     </div>
   );
