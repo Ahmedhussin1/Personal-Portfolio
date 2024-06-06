@@ -3,12 +3,12 @@ import { FaRegPaperPlane } from 'react-icons/fa';
 
 function GetInTouch() {
   return (
-    <div className='pb-10'>
+    <div className="pb-10">
       <div className="grid grid-cols-3 border-2 border-lines-color rounded border-t-0 ">
         <div className="col-span-1 p-5">
           <h1 className="text-[#edeef0] text-[18px]">Get in touch</h1>
           <p className="text-[#777b84] text-[14px]">
-            Send an email or DM and I'll get back to you asap.
+            Send an email or DM and I&apos;ll get back to you asap.
           </p>
         </div>
 

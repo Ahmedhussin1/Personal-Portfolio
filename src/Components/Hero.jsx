@@ -16,7 +16,9 @@ function Hero() {
           width={150}
           height={150}
         />
-        <h1 className="text-[90px] font-semibold text-white">Hi, I'm Ahmed.</h1>
+        <h1 className="text-[90px] font-semibold text-white">
+          Hi, I&apos;am Ahmed.
+        </h1>
         <p className="text-center text-[#777b84]">
           As a Front-End Developer, I specialize in creating dynamic and
           responsive web applications using React and Next.js. With a strong
