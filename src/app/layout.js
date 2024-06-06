@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="max-w-[1450px] mx-auto">
+      <body className="max-w-[90%] mx-auto">
         <div className="bg-background-color rounded-lg my-5">
           <Navbar />
           {children}

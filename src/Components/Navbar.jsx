@@ -2,8 +2,33 @@
 import React from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
+import {usePathname} from 'next/navigation'
 function Navbar() {
+  const navLinks = [
+    {
+      name:'Home',
+      link:'/',
+    },
+    {
+      name:'Work',
+      link:'/work',
+    },
+    {
+      name:'About',
+      link:'/about',
+    },
+    {
+      name:'Contact',
+      link:'/contact',
+    },
+    {
+      name:'Journal',
+      link:'/journal',
+    },
+  ]
   const [borderColor, setBorderColor] = useState("#212225");
+  const pathname = usePathname();
+  console.log(pathname);
   useEffect(()=>{
     const handelScroll = () =>{
       if(window.scrollY > 50 ){
@@ -21,24 +46,20 @@ function Navbar() {
     <div className="pt-2 sticky top-0 z-10">
       <div className="max-w-lg mx-auto mt-5 bg-background-color rounded">
         <ul
-          className={`flex gap-5 justify-center border-2 rounded-lg py-3 px-4`}
+          className={`flex gap-5 justify-center border-2 rounded-lg pb-3 pt-4 px-4`}
           style={{ borderColor }}
         >
-          <li>
-            <Link href="/">Home</Link>
+         {navLinks.map((link, index)=>{
+          {/* const isActive = pathname.startsWith(link.link) */}
+          return(
+          <li className='flex flex-col justify-between items-center' key={index}>
+            <Link href={link.link}>
+              {link.name}
+            </Link>
+            {pathname === (link.link) ? <div className='w-[5px] h-[5px] bg-text-color rounded-full'></div>:<></>}
           </li>
-          <li>
-            <Link href="/work">Work</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link href="/journal">Journal</Link>
-          </li>
+          )
+         })}
         </ul>
       </div>
     </div>
